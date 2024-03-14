@@ -203,222 +203,250 @@ let jesenikkOK = [78825, 79001, 79051, 79052, 79053, 79054, 79055, 79057, 79058,
 let prostejovOK = [79601, 79603, 79604, 79607, 79802, 79803, 79804, 79805, 79806, 79807, 79808, 79809, 79811, 79812, 79813, 79814, 79816, 79817, 79821, 79823, 79824, 79825, 79826, 79827, 79828, 79829, 79830, 79841, 79842, 79843, 79844, 79845, 79846, 79847, 79848, 79849, 79851, 79852, 79853, 79854, 79855, 79856, 79857, 79858, 79861, 79862]
 
 // OLOMOUCKÝ KRAJ
-// const psc = zip.toString().trim()
 
-const lengthOfZip = (zip, loz) => {
-    const delka = String(zip)
-    if(delka === 5){
-        return loz(zip)
-    }
-}
 
-const isValidZipCode = (zip) => {
+const valid = document.querySelector("#odpoved")
 
 
 
-    let valid = document.querySelector("#odpoved")
-    valid.classList.add("valid")
 
-    let retezec = String(zip)
-
-    if(retezec.length === 5) {
-
-    const psc = zip.toString().trim()
+const isValidZipCodePhase2 = (zip) => {
+    
+    let psc = String(zip)
     let cut = psc.slice(0, 2)
-    Number(cut)
-   
-        if(cut >= 10 && cut <= 19){
-            if(prahaMesto.includes(zip)){
-                return  valid.innerHTML = "Platné poštovní směrovací číslo pro okres Prahu-město."
-            }
-        } else if(cut >= 25 && cut <= 29){
-            if(prahaVychodSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Prahu-východ ve Středočeském kraji."
-            } else if (prahaZapadSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Praha-západ ve Středočeském kraji."
-            }else if (kolinSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kolín ve Středočeském kraji."
-            }else if (berounSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Beroun ve Středočeském kraji."
-            } else if (kladnoSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kladno ve Středočeském kraji."
-            }else if (melnikSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Mělník ve Středočeském kraji."
-            } else if (benesovSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Benešov ve Středočeském kraji."
-            } else if (nymburkSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Nymburk ve Středočeském kraji."
-            } else if (pribramSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Příbram ve Středočeském kraji."
-            }else if (rakovnikSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rakovník ve Středočeském kraji."
-            }else if (kutnaHoraSCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kutná Hora ve Středočeském kraji."
-            }  
-        } else if(cut >= 30 && cut <= 34){
-            if(plzenMestoPK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Plzeň-město v Plzěnském kraji."
-            }else if(plzenSeverPK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Plzeň-sever v Plzěnském kraji."
-            }else if(plzenJihPK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Plzeň-jih v Plzěnském kraji."
-            }else if(rokycanyPK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rokycany v Plzěnském kraji."
-            }else if(tachovPK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Tachov v Plzěnském kraji."
-            }else if(domazlicePK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Domažlice v Plzěnském kraji."
-            }else if(klatovyPK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Klatovy v Plzěnském kraji."
-            }
-        } else if(cut === 35 || cut === 36){
-            if(karlovyVaryKVK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Karlovy Vary v Karlovarském kraji."
-            } else if(chebKVK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Cheb v Karlovarském kraji."
-            } else if(sokolovKVK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Sokolov v Karlovarském kraji."
-            }
-        } else if(cut >= 37 && cut <= 39){
-            if(zip === jindrichuvHradecJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jindřichův Hradec v Jihočeském kraji"
-            } else if (ceskeBudejoviceJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres České Budějovice v Jihočeském kraji"
-            }else if (ceskyKrumlovJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Český Krumlov v Jihočeském kraji"
-            }else if ( prachaticeJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Prachatice v Jihočeském kraji"
-            }else if (strakoniceJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Strakonice v Jihočeském kraji"
-            }else if (pisekJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Písek v Jihočeském kraji"
-            }else if (taborJCK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Tábor v Jihočeském kraji"
-            }
-        } else if(cut >= 40 && cut <= 44){
-            if(mostUK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Most v Ústeckém kraji"
-            } else if(decinUK.includes(zip)){
-                return "Platné poštovní směrovací číslo pro okres Děčín v Ústeckém kraji"
-            } else if(lounyUK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Louny v Ústeckém kraji"
-            } else if(tepliceUK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Teplice v Ústeckém kraji"
-            } else if(chomutovUK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Chomutov v Ústeckém kraji"
-            } else if(litomericeUK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Litoměřice v Ústeckém kraji"
-            } else if(ustiNadLabemUK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Ustí nad Labem v Ústeckém kraji"
-            }
-        } else if(cut === 46 || cut === 47 || cut === 51){
-            if(semilyLBK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Semily v Libereckém kraji."
-            } else if(liberecLBK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Liberec v Libereckém kraji."
-            } else if(ceskaLipaLBK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Česká Lípa v Libereckém kraji."
-            } else if(jablonecNadNisouLBK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jablonec nad Nisou v Libereckém kraji."
-            }
-            
-        } else if(cut === 50 || cut === 51 || cut === 54 || cut === 55){
-           if(jicinKHK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jičín v Královéhradeckém kraji."
-            } else if(trutnovKHK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Trutnov v Královéhradeckém kraji."
-            } else if(nachodKHK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Náchod v Královéhradeckém kraji."
-            } else if(hradecKraloveKHK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Hradec Králové v Královéhradeckém kraji."
-            } else if(rychnovNadKneznouKHK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rychnov nad Kněžnou v Královéhradeckém kraji."
-            }
-        } else if (cut === 53 || cut === 56 || cut === 57 ){
-            if(pardubicePDK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Pardubice v Pardubickém kraji."
-            } else if(chrudimPDK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Chrudim v Pardubickém kraji."
-            } else if(ustiNadOrliciPDK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Ustí nad Orlicí v Pardubickém kraji."
-            } else if(svitavyPDK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Svitavy v Pardubickém kraji."
-            }
-        } else if(cut === 58 || cut === 59) {
-            if(pelhrimovKV.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Pelhřimov v Kraji Vysošina."
-            } else if(havlickuvBrodKV.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Havlíčkův Brod v Kraji Vysošina."
-            } else if(zdarNadSazavouKV.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Žďár nad Sázavou v Kraji Vysošina."
-            } else if(jihlavaKV.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jihlava v Kraji Vysošina."
-            } else if(trebicKV.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Třebíč v Kraji Vysošina."
-            }
-        } else if((cut >= 60 && cut <= 64) || cut === 66 || cut === 67 || cut === 69 ) {
-            if(brnoMestoJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Brno-město v Jihomoravském kraji."
-            } else if(brnoVenkovJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Brno-venkov v Jihomoravském kraji."
-            } else if(blanskoJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Blasnsko v Jihomoravském kraji."
-            } else if(vyskovJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Vyškov v Jihomoravském kraji."
-            } else if(hodoninJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Hodonín v Jihomoravském kraji."
-            }else if(breclavJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Břeclav v Jihomoravském kraji."
-            }else if(znojmoJMK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Znojmo v Jihomoravském kraji."
-            }
-            
-        } else if(cut === 68 || cut === 75 || cut === 76) {
-            if(vsetinZK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Vsetín v Zlínském kraji."
-            } else if(zlinZK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Zlín v Zlínském kraji."
-            } else if(kromerizZK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kroměříž v Zlínském kraji."
-            } else if(uherskeHradisteZK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Uherské Hradiště v Zlínském kraji."
-            }
-        } else if(cut >= 70 && cut <= 74){
-            if(ostravaMSK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Ostrava v Moravskoslezkém kraji."
-            } else if(frydekMistekMSK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Frýdek Místek v Moravskoslezkém kraji."
-            } else if(novyJicinMSK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Nový Jičín v Moravskoslezkém kraji."
-            } else if(karvinaMSK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Karviná v Moravskoslezkém kraji."
-            } else if(opavaMSK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Opava v Moravskoslezkém kraji."
-            } else if(bruntalMSK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Bruntál v Moravskoslezkém kraji."
-            }
-        }else if(cut >= 77 && cut <= 79){
-            if(olomoucOK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Olomouc v Olomouckém kraji."
-            } else if(prerovOK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Přerov v Olomouckém kraji."
-            } else if(prostejovOK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Prostějov v Olomouckém kraji."
-            } else if(sumperkOK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Šumperk v Olomouckém kraji."
-            } else if(jesenikkOK.includes(zip)){
-                return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jeseník v Olomouckém kraji."
-            }
-        } else {
-            valid.classList.add("invalid")
-            return valid.textContent = "Zadané PSČ není platné."
+    
+
+    if(cut >= 10 && cut <= 19){
+        valid.classList.add("valid")
+        if(String(prahaMesto).includes(zip)){
+            return  valid.innerHTML += "Platné poštovní směrovací číslo pro okres Prahu-město."
         }
-    } else if(retezec.length < 5){
+    } else if(cut >= 25 && cut <= 29){
+        valid.classList.add("valid")
+        if(String(prahaVychodSCK).includes(zip)){
+            return valid.innerHTML += "Platné poštovní směrovací číslo pro okres Prahu-východ ve Středočeském kraji."
+        } else if (String(prahaZapadSCK).includes(zip)){
+            return valid.innerHTML += "Platné poštovní směrovací číslo pro okres Praha-západ ve Středočeském kraji."
+        }else if (kolinSCK.includes(zip)){
+            return valid.innerHTML += "Platné poštovní směrovací číslo pro okres Kolín ve Středočeském kraji."
+        }else if (String(berounSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Beroun ve Středočeském kraji."
+        } else if (String(kladnoSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kladno ve Středočeském kraji."
+        }else if (String(melnikSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Mělník ve Středočeském kraji."
+        } else if (String(benesovSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Benešov ve Středočeském kraji."
+        } else if (String(nymburkSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Nymburk ve Středočeském kraji."
+        } else if (String(pribramSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Příbram ve Středočeském kraji."
+        }else if (String(rakovnikSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rakovník ve Středočeském kraji."
+        }else if (String(kutnaHoraSCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kutná Hora ve Středočeském kraji."
+        }  
+    } else if(cut >= 30 && cut <= 34){
+        valid.classList.add("valid")
+        if(String(plzenMestoPK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Plzeň-město v Plzěnském kraji."
+        }else if(String(plzenSeverPK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Plzeň-sever v Plzěnském kraji."
+        }else if(String(plzenJihPK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Plzeň-jih v Plzěnském kraji."
+        }else if(String(rokycanyPK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rokycany v Plzěnském kraji."
+        }else if(String(tachovPK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Tachov v Plzěnském kraji."
+        }else if(String(domazlicePK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Domažlice v Plzěnském kraji."
+        }else if(String(klatovyPK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Klatovy v Plzěnském kraji."
+        }
+    } else if(cut === 35 || cut === 36){
+        valid.classList.add("valid")
+        if(String(karlovyVaryKVK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Karlovy Vary v Karlovarském kraji."
+        } else if(String(chebKVK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Cheb v Karlovarském kraji."
+        } else if(String(sokolovKVK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Sokolov v Karlovarském kraji."
+        }
+    } else if(cut >= 37 && cut <= 39){
+        valid.classList.add("valid")
+        if(String(jindrichuvHradecJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jindřichův Hradec v Jihočeském kraji"
+        } else if (String(ceskeBudejoviceJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres České Budějovice v Jihočeském kraji"
+        }else if (String(ceskyKrumlovJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Český Krumlov v Jihočeském kraji"
+        }else if (String(ceskyKrumlovJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Prachatice v Jihočeském kraji"
+        }else if (String(strakoniceJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Strakonice v Jihočeském kraji"
+        }else if (String(pisekJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Písek v Jihočeském kraji"
+        }else if (String(taborJCK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Tábor v Jihočeském kraji"
+        }
+    } else if(cut >= 40 && cut <= 44){
+        valid.classList.add("valid")
+        if(String(mostUK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Most v Ústeckém kraji"
+        } else if(String(decinUK).includes(zip)){
+            return "Platné poštovní směrovací číslo pro okres Děčín v Ústeckém kraji"
+        } else if(String(lounyUK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Louny v Ústeckém kraji"
+        } else if(String(tepliceUK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Teplice v Ústeckém kraji"
+        } else if(String(chomutovUK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Chomutov v Ústeckém kraji"
+        } else if(String(litomericeUK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Litoměřice v Ústeckém kraji"
+        } else if(String(ustiNadLabemUK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Ustí nad Labem v Ústeckém kraji"
+        }
+    } else if(cut === 46 || cut === 47 || cut === 51){
+        valid.classList.add("valid")
+        if(String(semilyLBK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Semily v Libereckém kraji."
+        } else if(String(liberecLBK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Liberec v Libereckém kraji."
+        } else if(String(ceskaLipaLBK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Česká Lípa v Libereckém kraji."
+        } else if(String(jablonecNadNisouLBK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jablonec nad Nisou v Libereckém kraji."
+        }
+        
+    } else if(cut === 50 || cut === 51 || cut === 54 || cut === 55){
+        valid.classList.add("valid")
+        if(String(jicinKHK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jičín v Královéhradeckém kraji."
+        } else if(String(trutnovKHK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Trutnov v Královéhradeckém kraji."
+        } else if(String(nachodKHK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Náchod v Královéhradeckém kraji."
+        } else if(String(hradecKraloveKHK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Hradec Králové v Královéhradeckém kraji."
+        } else if(String(rychnovNadKneznouKHK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rychnov nad Kněžnou v Královéhradeckém kraji."
+        }
+    } else if (cut === 53 || cut === 56 || cut === 57 ){
+        valid.classList.add("valid")
+        if(String(pardubicePDK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Pardubice v Pardubickém kraji."
+        } else if(String(chrudimPDK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Chrudim v Pardubickém kraji."
+        } else if(String(ustiNadOrliciPDK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Ustí nad Orlicí v Pardubickém kraji."
+        } else if(String(svitavyPDK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Svitavy v Pardubickém kraji."
+        }
+    } else if(cut === 58 || cut === 59) {
+        valid.classList.add("valid")
+        if(String(pelhrimovKV).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Pelhřimov v Kraji Vysošina."
+        } else if(String(havlickuvBrodKV).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Havlíčkův Brod v Kraji Vysošina."
+        } else if(String(zdarNadSazavouKV).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Žďár nad Sázavou v Kraji Vysošina."
+        } else if(String(jihlavaKV).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jihlava v Kraji Vysošina."
+        } else if(strakoniceJCK(trebicKV).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Třebíč v Kraji Vysošina."
+        }
+    } else if((cut >= 60 && cut <= 64) || cut === 66 || cut === 67 || cut === 69 ) {
+        valid.classList.add("valid")
+        if(String(brnoMestoJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Brno-město v Jihomoravském kraji."
+        } else if(String(brnoVenkovJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Brno-venkov v Jihomoravském kraji."
+        } else if(String(blanskoJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Blasnsko v Jihomoravském kraji."
+        } else if(String(vyskovJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Vyškov v Jihomoravském kraji."
+        } else if(String(hodoninJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Hodonín v Jihomoravském kraji."
+        }else if(String(breclavJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Břeclav v Jihomoravském kraji."
+        }else if(String(znojmoJMK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Znojmo v Jihomoravském kraji."
+        }
+        
+    } else if(cut === 68 || cut === 75 || cut === 76) {
+        valid.classList.add("valid")
+        if(String(vsetinZK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Vsetín v Zlínském kraji."
+        } else if(String(zlinZK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Zlín v Zlínském kraji."
+        } else if(String(kromerizZK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kroměříž v Zlínském kraji."
+        } else if(String(uherskeHradisteZK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Uherské Hradiště v Zlínském kraji."
+        }
+    } else if(cut >= 70 && cut <= 74){
+        valid.classList.add("valid")
+        if(String(ostravaMSK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Ostrava v Moravskoslezkém kraji."
+        } else if(String(frydekMistekMSK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Frýdek Místek v Moravskoslezkém kraji."
+        } else if(String(novyJicinMSK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Nový Jičín v Moravskoslezkém kraji."
+        } else if(String(karvinaMSK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Karviná v Moravskoslezkém kraji."
+        } else if(String(opavaMSK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Opava v Moravskoslezkém kraji."
+        } else if(String(bruntalMSK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Bruntál v Moravskoslezkém kraji."
+        }
+    }else if(cut >= 77 && cut <= 79){
+        valid.classList.add("valid")
+        if(String(olomoucOK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Olomouc v Olomouckém kraji."
+        } else if(String(prerovOK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Přerov v Olomouckém kraji."
+        } else if(String(prostejovOK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Prostějov v Olomouckém kraji."
+        } else if(String(sumperkOK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Šumperk v Olomouckém kraji."
+        } else if(String(jesenikkOK).includes(zip)){
+            return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Jeseník v Olomouckém kraji."
+        }
+    } else {
         valid.classList.add("invalid")
-        return valid.textContent = "PSČ musí obsahovat pět číslic."
+        return valid.textContent = "Zadané PSČ není platné."
     }
 } 
 
-const psc = Number(prompt("Zadej poštovní směrovací číslo:"))
+const isValidZipCodePhase1 = (zip, lengthOfZip) => {
+    
 
-isValidZipCode(psc)
+    const delka = String(zip).trim()
+    if(delka.length <= 4){
+        valid.classList.add("invalid")
+        return valid.innerHTML += "PSČ musí mít 5 číslic."
+    } else if(delka.length > 6){
+        return valid.innerHTML +=  "PSČ může mít pouze 5 číslic."
+    } else if(delka.length === 6){
+        if(delka.indexOf(" ") === 3){
+            let string1 = String(delka).slice(0, 3)
+            let string2 = String(delka).slice(4, 6)
+            let string3 = string1 + string2
+            
+            return lengthOfZip(string3)
+            
+        } else{
+            valid.classList.add("invalid")
+            return valid.innerHTML +=  "Zkuste to znova, špatně zadané znaky."
+        }
+    }  else if(delka.length === 5){
+        
+        return lengthOfZip(zip)
+    }
+}
+
+const psc = prompt("Zadej poštovní směrovací číslo:").trim() 
+isValidZipCodePhase1(psc, isValidZipCodePhase2)
+
+const btn = document.querySelector("#btn")
+const input = document.querySelector("input")
