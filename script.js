@@ -219,12 +219,15 @@ const isValidZipCodePhase2 = (zip) => {
     if(cut >= 10 && cut <= 19){
         valid.classList.add("valid")
         if(String(prahaMesto).includes(zip)){
-            return  valid.innerHTML += "Platné poštovní směrovací číslo pro okres Prahu-město."
+            return  valid.innerHTML += "Platné poštovní směrovací číslo pro okres Praha-město."
+        } else {
+            valid.classList.add("invalid")
+            return valid.textContent = "Zadané PSČ není platné."
         }
     } else if(cut >= 25 && cut <= 29){
         valid.classList.add("valid")
         if(String(prahaVychodSCK).includes(zip)){
-            return valid.innerHTML += "Platné poštovní směrovací číslo pro okres Prahu-východ ve Středočeském kraji."
+            return valid.innerHTML += "Platné poštovní směrovací číslo pro okres Praha-východ ve Středočeském kraji."
         } else if (String(prahaZapadSCK).includes(zip)){
             return valid.innerHTML += "Platné poštovní směrovací číslo pro okres Praha-západ ve Středočeském kraji."
         }else if (kolinSCK.includes(zip)){
@@ -245,7 +248,7 @@ const isValidZipCodePhase2 = (zip) => {
             return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Rakovník ve Středočeském kraji."
         }else if (String(kutnaHoraSCK).includes(zip)){
             return valid.innerHTML = "Platné poštovní směrovací číslo pro okres Kutná Hora ve Středočeském kraji."
-        }  
+        } 
     } else if(cut >= 30 && cut <= 34){
         valid.classList.add("valid")
         if(String(plzenMestoPK).includes(zip)){
@@ -445,8 +448,14 @@ const isValidZipCodePhase1 = (zip, lengthOfZip) => {
     }
 }
 
-const psc = prompt("Zadej poštovní směrovací číslo:").trim() 
-isValidZipCodePhase1(psc, isValidZipCodePhase2)
+/* const psc = prompt("Zadej poštovní směrovací číslo:").trim() */ 
 
-const btn = document.querySelector("#btn")
-const input = document.querySelector("input")
+
+
+const numberInput = document.getElementById('input');
+const submitButton = document.getElementById('btn');
+
+submitButton.addEventListener('click', () => {
+    const enteredNumber = numberInput.value
+    isValidZipCodePhase1(enteredNumber, isValidZipCodePhase2);
+});
