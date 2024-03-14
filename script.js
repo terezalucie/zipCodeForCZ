@@ -456,6 +456,11 @@ const numberInput = document.getElementById('input');
 const submitButton = document.getElementById('btn');
 
 submitButton.addEventListener('click', () => {
-    const enteredNumber = numberInput.value
+
+    const enteredNumber = numberInput.value;
     isValidZipCodePhase1(enteredNumber, isValidZipCodePhase2);
-});
+    
+
+})
+
+
